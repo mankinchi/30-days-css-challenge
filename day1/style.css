@@ -1,0 +1,145 @@
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    src: local("Roboto Light"), local("Roboto-Light"),
+        url(https://themes.googleusercontent.com/static/fonts/roboto/v9/Pru33qjShpZSmG3z6VYwnT8E0i7KZn-EPnyo3HZu7kw.woff)
+            format("woff");
+}
+
+body {
+    margin: 0;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-container {
+    position: relative;
+    overflow: hidden;
+
+    padding: 20px;
+    color: #42accf;
+    font-family: "Roboto";
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.5s;
+}
+
+.btn-container:hover {
+    color: black;
+    background-color: #42accf;
+
+    box-shadow: 0 0 5px #42accf, 0 0 25px #42accf, 0 0 50px #42accf,
+        0 0 200px #42accf, 0 0 250px #42accf, 0 0 300px #42accf;
+    -webkit-box-reflect: below 0 linear-gradient(transparent, black);
+}
+
+.btn-container:nth-child(2) {
+    filter: hue-rotate(120deg);
+}
+
+.btn-container:nth-child(3) {
+    filter: hue-rotate(240deg);
+}
+
+.btn-container span {
+    position: absolute;
+    display: block;
+    opacity: 0;
+}
+
+.btn-container span:nth-child(2) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #42accf);
+    animation: animate-top-border 1s infinite;
+}
+
+.btn-container span:nth-child(3) {
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #42accf);
+    animation: animate-right-border 1s infinite;
+    animation-delay: 0.2s;
+}
+
+.btn-container span:nth-child(4) {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to left, transparent, #42accf);
+    animation: animate-bottom-border 1s infinite;
+}
+
+.btn-container span:nth-child(5) {
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top, transparent, #42accf);
+    animation: animate-left-border 1s infinite;
+    animation-delay: 0.2s;
+}
+
+@keyframes animate-top-border {
+    0% {
+        opacity: 1;
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes animate-right-border {
+    0% {
+        opacity: 1;
+        top: -100%;
+    }
+
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes animate-bottom-border {
+    0% {
+        opacity: 1;
+        left: 100%;
+    }
+
+    50%,
+    100% {
+        left: -100%;
+    }
+}
+
+@keyframes animate-left-border {
+    0% {
+        opacity: 1;
+        top: 100%;
+    }
+
+    50%,
+    100% {
+        top: -100%;
+    }
+}
